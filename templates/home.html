@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Weather page</title>
+
+</head>
+<body text="#E3C770" bgcolor="#0F3460">
+<center>
+
+
+    <h1> Hello Welcome to Weather page</h1>
+    <form method="post" action="/">
+        <input type="text" placeholder="Enter City" name="city">
+        <button type="submit">Submit</button>
+
+    </form>
+    {% if data.code == 200 %}
+    <h1>{{data.name}}</h1>
+    <h2>Temperature: {{data.temp}} &#x2103;</h2>
+    <h2>Sunrise: {{data.sunrise}} </h2>
+    <h2>Sunset: {{data.sunset}} </h2>
+    <h2>Longitude: {{data.lon}}</h2>
+    <h2>Latitude: {{data.lat}}</h2>
+    {% elif data.code == 404 %}
+    <h3>{{data.message}}!!!!!</h3>
+    {% else %}
+    {% endif %}
+
+    </div>
+</center>
+
+
+</body>
+
+</html>
+
+
